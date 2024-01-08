@@ -60,6 +60,10 @@ public class screen {
                         }
                         break;
                     case 6:
+                        if(buy.buy_list.isEmpty()){
+                            System.out.println("진행중인 주문이 없습니다.");
+                            break;
+                        }
                         System.out.println("진행하던 주문을 취소하시겠습니까?");
                         System.out.println("1.확인          2.취소");
                         while (true){
