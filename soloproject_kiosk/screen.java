@@ -64,23 +64,8 @@ public class screen {
                             System.out.println("진행중인 주문이 없습니다.");
                             break;
                         }
-                        System.out.println("진행하던 주문을 취소하시겠습니까?");
-                        System.out.println("1.확인          2.취소");
-                        while (true){
-                            error_check();
-                            switch (choose){
-                                case 1:
-                                    System.out.println("주문이 취소되었습니다.");
-                                    buy.buy_list.clear();
-                                    break;
-                                case 2:
-                                    break;
-                                default:
-                                    System.out.println("잘못된 값을 입력하셨습니다. 다시 입력해 주세요.");
-                                    continue;
-                            }
-                            break;
-                        }
+                        cancel();
+                        break;
                 }
                 break;
             }
@@ -151,6 +136,26 @@ public class screen {
         pro.view_menu();
         basket(pro);
     }
+    //주문을 취소시키는 메소드
+    public void cancel(){
+        System.out.println("진행하던 주문을 취소하시겠습니까?");
+        System.out.println("1.확인          2.취소");
+        while (true){
+            error_check();
+            switch (choose){
+                case 1:
+                    System.out.println("주문이 취소되었습니다.");
+                    buy.buy_list.clear();
+                    break;
+                case 2:
+                    break;
+                default:
+                    System.out.println("잘못된 값을 입력하셨습니다. 다시 입력해 주세요.");
+                    continue;
+            }
+            break;
+        }
+    }
     //선택한 상품을 장바구니에 추가시키는 메서드
     public void basket(product pro){
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
@@ -191,5 +196,4 @@ public class screen {
     public void protitle(){
         System.out.println("아래에 상품메뉴판을 보시고 상품을 골라 입력해주세요.");
     }
-
 }
